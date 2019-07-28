@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home">
+        <template>
+            <v-container grid-list-md>
+                <v-layout wrap>
+                    <v-flex xs12 md4>
+                        <sidebar></sidebar>
+                    </v-flex>
+                    <v-flex xs12 md8>
+                        <main-content></main-content>
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </template>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+    import Sidebar from '../components/Sidebar'
+    import MainContent from '../components/MainContent'
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'Home',
+        // eslint-disable-next-line vue/no-unused-components
+        components: {Sidebar, MainContent}
+    };
 </script>

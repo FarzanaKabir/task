@@ -1,31 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app>
+        <navbar></navbar>
+        <banner></banner>
+        <v-content>
+            <v-container fluid>
+                <router-view></router-view>
+            </v-container>
+        </v-content>
+        <main-footer></main-footer>
+    </v-app>
 </template>
 
+<script>
+    import Navbar from './components/Navbar'
+    import Banner from './components/Banner'
+    import MainFooter from './components/MainFooter'
+
+    export default {
+        name: 'App',
+        // eslint-disable-next-line vue/no-unused-components
+        components: {Navbar, Banner, MainFooter},
+        data: () => ({
+            //
+        }),
+    };
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
 </style>
